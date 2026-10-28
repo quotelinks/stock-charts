@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quotelinks.github.io/stock-charts/schemas/price-target.schema.json",
+  "title": "ql-charts price-target data",
+  "type": "object",
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "description": "Ticker shown in the header"
+    },
+    "title": {
+      "type": "string",
+      "description": "Overrides the default chart title"
+    },
+    "currency": {
+      "type": "string",
+      "description": "ISO 4217 code, default USD"
+    },
+    "_note": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "prices": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "prefixItems": [
+          {
+            "type": "string",
+            "format": "date",
+            "description": "YYYY-MM-DD"
+          },
+          {
+            "type": "number"
+          }
+        ],
+        "minItems": 2,
+        "maxItems": 2
+      },
+      "description": "Past prices for the left half (monthly points are enough)"
+    },
+    "low": {
+      "type": "number"
+    },
+    "average": {
+      "type": "number"
+    },
+    "median": {
+      "type": "number"
+    },
+    "high": {
+      "type": "number"
+    },
+    "horizonMonths": {
+      "type": "integer",
+      "default": 12
+    }
+  },
+  "required": [
+    "prices",
+    "low",
+    "average",
+    "high"
+  ]
+}

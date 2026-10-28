@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quotelinks.github.io/stock-charts/schemas/range-performance.schema.json",
+  "title": "ql-charts range-performance data",
+  "type": "object",
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "description": "Ticker shown in the header"
+    },
+    "title": {
+      "type": "string",
+      "description": "Overrides the default chart title"
+    },
+    "currency": {
+      "type": "string",
+      "description": "ISO 4217 code, default USD"
+    },
+    "_note": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "low52": {
+      "type": "number"
+    },
+    "high52": {
+      "type": "number"
+    },
+    "returns": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      },
+      "description": "Label -> % return, e.g. {\"1M\": -3.8, \"1Y\": 18.6}"
+    },
+    "benchmark": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "returns": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        }
+      },
+      "required": [
+        "name",
+        "returns"
+      ]
+    }
+  },
+  "required": [
+    "price"
+  ]
+}

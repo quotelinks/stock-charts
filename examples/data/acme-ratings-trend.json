@@ -1,0 +1,38 @@
+{
+  "_note": "Fictional sample data for the ql-charts demo. Not real market data.",
+  "symbol": "ACME",
+  "periods": [
+    {
+      "period": "Jul",
+      "strongBuy": 14,
+      "buy": 40,
+      "hold": 3,
+      "sell": 0,
+      "strongSell": 0
+    },
+    {
+      "period": "Aug",
+      "strongBuy": 14,
+      "buy": 38,
+      "hold": 3,
+      "sell": 0,
+      "strongSell": 0
+    },
+    {
+      "period": "Sep",
+      "strongBuy": 14,
+      "buy": 39,
+      "hold": 2,
+      "sell": 0,
+      "strongSell": 0
+    },
+    {
+      "period": "Oct",
+      "strongBuy": 13,
+      "buy": 41,
+      "hold": 2,
+      "sell": 1,
+      "strongSell": 0
+    }
+  ]
+}

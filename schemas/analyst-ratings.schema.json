@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quotelinks.github.io/stock-charts/schemas/analyst-ratings.schema.json",
+  "title": "ql-charts analyst-ratings data",
+  "type": "object",
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "description": "Ticker shown in the header"
+    },
+    "title": {
+      "type": "string",
+      "description": "Overrides the default chart title"
+    },
+    "currency": {
+      "type": "string",
+      "description": "ISO 4217 code, default USD"
+    },
+    "_note": {
+      "type": "string"
+    },
+    "strongBuy": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "buy": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "hold": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "sell": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "strongSell": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": []
+}

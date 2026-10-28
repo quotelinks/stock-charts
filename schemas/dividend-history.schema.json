@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quotelinks.github.io/stock-charts/schemas/dividend-history.schema.json",
+  "title": "ql-charts dividend-history data",
+  "type": "object",
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "description": "Ticker shown in the header"
+    },
+    "title": {
+      "type": "string",
+      "description": "Overrides the default chart title"
+    },
+    "currency": {
+      "type": "string",
+      "description": "ISO 4217 code, default USD"
+    },
+    "_note": {
+      "type": "string"
+    },
+    "yield": {
+      "type": "number",
+      "description": "Dividend yield in %"
+    },
+    "growthYears": {
+      "type": "integer"
+    },
+    "annual": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "prefixItems": [
+          {
+            "type": [
+              "integer",
+              "string"
+            ]
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "boolean",
+            "description": "true = trailing-12-month bar"
+          }
+        ],
+        "minItems": 2
+      },
+      "description": "[[year, amount], ..., [\"TTM\", amount, true]]"
+    }
+  },
+  "required": [
+    "annual"
+  ]
+}

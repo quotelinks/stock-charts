@@ -1,0 +1,9 @@
+{
+  "_note": "Fictional sample data for the ql-charts demo. Not real market data.",
+  "symbol": "ACME",
+  "strongBuy": 11,
+  "buy": 8,
+  "hold": 4,
+  "sell": 1,
+  "strongSell": 0
+}

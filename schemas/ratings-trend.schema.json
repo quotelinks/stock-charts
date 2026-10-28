@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quotelinks.github.io/stock-charts/schemas/ratings-trend.schema.json",
+  "title": "ql-charts ratings-trend data",
+  "type": "object",
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "description": "Ticker shown in the header"
+    },
+    "title": {
+      "type": "string",
+      "description": "Overrides the default chart title"
+    },
+    "currency": {
+      "type": "string",
+      "description": "ISO 4217 code, default USD"
+    },
+    "_note": {
+      "type": "string"
+    },
+    "periods": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "period": {
+            "type": "string"
+          },
+          "strongBuy": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "buy": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "hold": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "sell": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "strongSell": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "period"
+        ]
+      },
+      "description": "Oldest first, e.g. one entry per month"
+    },
+    "labels": {
+      "type": "object",
+      "properties": {
+        "strongBuy": {
+          "type": "string"
+        },
+        "buy": {
+          "type": "string"
+        },
+        "hold": {
+          "type": "string"
+        },
+        "sell": {
+          "type": "string"
+        },
+        "strongSell": {
+          "type": "string"
+        }
+      },
+      "description": "Rename categories, e.g. {\"sell\":\"Underperform\"}"
+    }
+  },
+  "required": [
+    "periods"
+  ]
+}

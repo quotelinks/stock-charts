@@ -1,0 +1,9 @@
+{
+  "_note": "Fictional sample data for the ql-charts demo. Not real market data.",
+  "symbol": "ACME",
+  "price": 217.91,
+  "target": 355.19,
+  "consensus": 4.55,
+  "analysts": 24,
+  "asOf": "2026-10-27"
+}

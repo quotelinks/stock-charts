@@ -1,0 +1,23 @@
+{
+  "name": "quotelinks-stock-charts",
+  "version": "1.0.1",
+  "description": "Zero-dependency SVG stock chart widgets: analyst price targets, rating gauge, recommendations, price chart, dividends, EPS surprises. You supply the JSON.",
+  "main": "dist/ql-charts.min.js",
+  "browser": "dist/ql-charts.min.js",
+  "jsdelivr": "dist/ql-charts.min.js",
+  "unpkg": "dist/ql-charts.min.js",
+  "files": ["dist", "src", "schemas"],
+  "scripts": {
+    "build": "terser src/ql-charts.js -c -m --comments some -o dist/ql-charts.min.js"
+  },
+  "devDependencies": {
+    "terser": "5.31.0"
+  },
+  "keywords": ["stock", "chart", "finance", "widget", "svg", "price-target", "analyst-ratings", "stock-chart", "dividends", "earnings", "zero-dependency"],
+  "homepage": "https://quotelinks.github.io/stock-charts/",
+  "repository": { "type": "git", "url": "git+https://github.com/quotelinks/stock-charts.git" },
+  "bugs": { "url": "https://github.com/quotelinks/stock-charts/issues" },
+  "author": "Quotelinks (https://www.quotelinks.com/)",
+  "license": "MIT",
+  "private": true
+}

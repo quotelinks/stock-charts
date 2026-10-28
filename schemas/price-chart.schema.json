@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quotelinks.github.io/stock-charts/schemas/price-chart.schema.json",
+  "title": "ql-charts price-chart data",
+  "type": "object",
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "description": "Ticker shown in the header"
+    },
+    "title": {
+      "type": "string",
+      "description": "Overrides the default chart title"
+    },
+    "currency": {
+      "type": "string",
+      "description": "ISO 4217 code, default USD"
+    },
+    "_note": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "prices": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "prefixItems": [
+          {
+            "type": "string",
+            "format": "date",
+            "description": "YYYY-MM-DD"
+          },
+          {
+            "type": "number"
+          }
+        ],
+        "minItems": 2,
+        "maxItems": 2
+      },
+      "description": "[[\"YYYY-MM-DD\", close], ...] oldest first"
+    },
+    "range": {
+      "enum": [
+        "1M",
+        "6M",
+        "YTD",
+        "1Y",
+        "5Y",
+        "Max"
+      ],
+      "default": "1Y"
+    }
+  },
+  "required": [
+    "prices"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "_note": "Fictional sample data for the ql-charts demo. Not real market data.",
+  "symbol": "ACME",
+  "price": 217.91,
+  "low52": 178.69,
+  "high52": 307.25,
+  "returns": {
+    "1W": 2.4,
+    "1M": -3.8,
+    "YTD": 11.2,
+    "1Y": 18.6,
+    "3Y": 42.1
+  },
+  "benchmark": {
+    "name": "Index",
+    "returns": {
+      "1W": 0.9,
+      "1M": 1.6,
+      "YTD": 14,
+      "1Y": 16.2,
+      "3Y": 35.4
+    }
+  }
+}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stock Charts demo: free JavaScript stock chart widgets</title>
+<meta name="description" content="Live demo of ql-charts: 9 free, zero-dependency SVG stock chart widgets (analyst price targets, ratings, price chart, dividends, EPS) that render your own JSON data.">
+<link rel="canonical" href="https://quotelinks.github.io/stock-charts/examples/">
+<style>
+  :root{--bg:#f9fafb;--fg:#111827;--mut:#6b7280;--bd:#e5e7eb;--ac:#1d4ed8}
+  body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+  body.dark{--bg:#030712;--fg:#f3f4f6;--mut:#9ca3af;--bd:#374151;--ac:#60a5fa}
+  main{max-width:1180px;margin:0 auto;padding:28px 16px 60px}
+  h1{margin:0 0 6px;font-size:28px}
+  p.lead{color:var(--mut);margin:0 0 16px;max-width:760px}
+  a{color:var(--ac)}
+  .bar{display:flex;gap:10px;align-items:center;margin-bottom:22px;flex-wrap:wrap;font-size:14px}
+  .bar a.btn{padding:6px 12px;border-radius:8px;border:1px solid var(--bd);text-decoration:none;color:inherit}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:20px;align-items:start}
+  .wide{grid-column:1/-1;max-width:780px}
+  figure{margin:0}
+  figcaption{font:12px ui-monospace,Consolas,monospace;color:var(--mut);margin-bottom:6px}
+  footer{margin-top:40px;color:var(--mut);font-size:13px}
+</style>
+</head>
+<body>
+<main>
+  <h1>Stock Charts</h1>
+  <p class="lead">Nine free, zero-dependency SVG chart widgets for stock data. You supply the JSON; the library draws it.
+  All data on this page is fictional (ticker ACME). Source and docs on <a href="https://github.com/quotelinks/stock-charts">GitHub</a>.</p>
+  <div class="bar">
+    <a class="btn" id="tg" href="?theme=dark">Dark theme</a>
+    <a href="embed.html">Embedding examples</a>
+    <a href="https://github.com/quotelinks/stock-charts#data-formats">Data formats</a>
+  </div>
+
+  <div class="grid">
+    <figure class="wide"><figcaption>price-target</figcaption><div class="ql-chart" data-type="price-target" data-src="data/acme-price-target.json"></div></figure>
+    <figure><figcaption>analyst-gauge</figcaption><div class="ql-chart" data-type="analyst-gauge" data-src="data/acme-analyst-gauge.json"></div></figure>
+    <figure><figcaption>analyst-ratings</figcaption><div class="ql-chart" data-type="analyst-ratings" data-src="data/acme-analyst-ratings.json"></div></figure>
+    <figure><figcaption>target-range</figcaption><div class="ql-chart" data-type="target-range" data-src="data/acme-target-range.json"></div></figure>
+    <figure><figcaption>ratings-trend</figcaption><div class="ql-chart" data-type="ratings-trend" data-src="data/acme-ratings-trend.json"></div></figure>
+    <figure class="wide"><figcaption>price-chart</figcaption><div class="ql-chart" data-type="price-chart" data-src="data/acme-price-chart.json"></div></figure>
+    <figure><figcaption>range-performance</figcaption><div class="ql-chart" data-type="range-performance" data-src="data/acme-range-performance.json"></div></figure>
+    <figure><figcaption>dividend-history</figcaption><div class="ql-chart" data-type="dividend-history" data-src="data/acme-dividend-history.json"></div></figure>
+    <figure><figcaption>earnings-surprise</figcaption><div class="ql-chart" data-type="earnings-surprise" data-src="data/acme-earnings-surprise.json"></div></figure>
+  </div>
+
+  <footer>MIT licensed. Made by <a href="https://www.quotelinks.com/">Quotelinks</a> &middot; see also <a href="https://github.com/quotelinks/quotelinks-stock-widgets">Quotelinks stock widgets</a>.</footer>
+</main>
+<script>
+  // demo only: ?theme=dark switches every chart before the library runs
+  (function () {
+    var dark = /[?&]theme=dark\b/.test(location.search);
+    if (!dark) return;
+    document.body.classList.add("dark");
+    var tg = document.getElementById("tg"); tg.textContent = "Light theme"; tg.href = "?";
+    [].forEach.call(document.querySelectorAll(".ql-chart"), function (el) { el.setAttribute("data-theme", "dark"); });
+  })();
+</script>
+<script src="../dist/ql-charts.min.js" defer></script>
+</body>
+</html>

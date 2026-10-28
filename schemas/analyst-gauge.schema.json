@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quotelinks.github.io/stock-charts/schemas/analyst-gauge.schema.json",
+  "title": "ql-charts analyst-gauge data",
+  "type": "object",
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "description": "Ticker shown in the header"
+    },
+    "title": {
+      "type": "string",
+      "description": "Overrides the default chart title"
+    },
+    "currency": {
+      "type": "string",
+      "description": "ISO 4217 code, default USD"
+    },
+    "_note": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number",
+      "description": "Current price"
+    },
+    "target": {
+      "type": "number",
+      "description": "Mean 12-month price target"
+    },
+    "consensus": {
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 5
+        },
+        {
+          "enum": [
+            "Strong Sell",
+            "Sell",
+            "Hold",
+            "Buy",
+            "Strong Buy"
+          ]
+        }
+      ],
+      "description": "Score 1 (Strong Sell) to 5 (Strong Buy), or a label"
+    },
+    "analysts": {
+      "type": "integer"
+    },
+    "asOf": {
+      "type": "string",
+      "format": "date",
+      "description": "YYYY-MM-DD"
+    }
+  },
+  "required": [
+    "consensus"
+  ]
+}

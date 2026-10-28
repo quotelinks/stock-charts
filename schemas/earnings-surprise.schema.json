@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quotelinks.github.io/stock-charts/schemas/earnings-surprise.schema.json",
+  "title": "ql-charts earnings-surprise data",
+  "type": "object",
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "description": "Ticker shown in the header"
+    },
+    "title": {
+      "type": "string",
+      "description": "Overrides the default chart title"
+    },
+    "currency": {
+      "type": "string",
+      "description": "ISO 4217 code, default USD"
+    },
+    "_note": {
+      "type": "string"
+    },
+    "quarters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "period": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "YYYY-MM-DD"
+          },
+          "estimate": {
+            "type": "number"
+          },
+          "actual": {
+            "type": "number",
+            "description": "Omit for an upcoming report"
+          }
+        },
+        "required": [
+          "period",
+          "estimate"
+        ]
+      }
+    }
+  },
+  "required": [
+    "quarters"
+  ]
+}

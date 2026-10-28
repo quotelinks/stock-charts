@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quotelinks.github.io/stock-charts/schemas/target-range.schema.json",
+  "title": "ql-charts target-range data",
+  "type": "object",
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "description": "Ticker shown in the header"
+    },
+    "title": {
+      "type": "string",
+      "description": "Overrides the default chart title"
+    },
+    "currency": {
+      "type": "string",
+      "description": "ISO 4217 code, default USD"
+    },
+    "_note": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "low": {
+      "type": "number"
+    },
+    "average": {
+      "type": "number"
+    },
+    "median": {
+      "type": "number"
+    },
+    "high": {
+      "type": "number"
+    },
+    "analysts": {
+      "type": "integer"
+    },
+    "asOf": {
+      "type": "string",
+      "format": "date",
+      "description": "YYYY-MM-DD"
+    }
+  },
+  "required": [
+    "price",
+    "low",
+    "average",
+    "high"
+  ]
+}
